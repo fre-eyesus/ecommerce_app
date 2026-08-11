@@ -1,20 +1,24 @@
 import 'package:flutter/material.dart';
-
 import '../models/product.dart';
-import '../screens/product_list_screen.dart';
+import '../screens/home_screen.dart';
 import '../screens/product_detail_screen.dart';
 import '../screens/product_form_screen.dart';
 
 class AppRouter {
+  // Route names
   static const String home = '/';
-  static const String productDetail = '/product-detail';
   static const String productForm = '/product-form';
+  static const String productDetail = '/product-detail';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case home:
+        return MaterialPageRoute(builder: (_) => const HomeScreen());
+
+      case productForm:
+        final product = settings.arguments as Product?;
         return MaterialPageRoute(
-          builder: (_) => const ProductListScreen(),
+          builder: (_) => ProductFormScreen(product: product),
         );
 
       case productDetail:
@@ -23,19 +27,11 @@ class AppRouter {
           builder: (_) => ProductDetailScreen(product: product),
         );
 
-      case productForm:
-        // Pass an existing product if editing; null if creating a new one
-        final product = settings.arguments as Product?;
-        return MaterialPageRoute(
-          builder: (_) => ProductFormScreen(product: product),
-        );
-
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(
-            body: Center(
-              child: Text('No route defined for ${settings.name}'),
-            ),
+            appBar: AppBar(title: const Text('Error')),
+            body: const Center(child: Text('Route not found')),
           ),
         );
     }
