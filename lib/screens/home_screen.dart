@@ -91,7 +91,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(Icons.inventory_2_outlined, size: 64, color: Colors.grey[400]),
+                  Icon(Icons.inventory_2, size: 64, color: Colors.grey[400]),
                   const SizedBox(height: 12),
                   const Text('No products available. Add one!'),
                 ],
