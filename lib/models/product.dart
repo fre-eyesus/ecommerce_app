@@ -12,4 +12,19 @@ class Product {
     required this.price,
     required this.imageUrl,
   });
+  Product copyWith({
+    String? id,
+    String? title,
+    String? description,
+    double? price,
+    String? imageUrl,
+  }) {
+    return Product(
+      id: id ?? this.id,
+      title: title ?? this.title,
+      description: description ?? this.description,
+      price: price ?? this.price,
+      imageUrl: imageUrl ?? this.imageUrl,
+    );
+  }
 }
