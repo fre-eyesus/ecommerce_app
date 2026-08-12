@@ -31,7 +31,7 @@ class ProductListScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: ListView.builder(
+      body: ListView .builder(
         itemCount: sampleProducts.length,
         itemBuilder: (context, index) {
           final product = sampleProducts[index];
