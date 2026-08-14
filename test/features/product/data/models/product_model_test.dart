@@ -3,7 +3,6 @@ import 'package:ecommerce_app/features/product/data/models/product_model.dart';
 import 'package:ecommerce_app/features/product/domain/entities/product.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-// Adjust these imports to match your project path
 import '../../../../fixtures/fixture_reader.dart';
 
 void main() {
